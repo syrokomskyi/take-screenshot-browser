@@ -6,10 +6,13 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
+    "start:remote": "wrangler dev --remote",
     "test": "vitest",
     "cf-typegen": "wrangler types"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/puppeteer": "^0.0.14",
     "@cloudflare/vitest-pool-workers": "^0.5.2",
     "@cloudflare/workers-types": "^4.20241127.0",
     "typescript": "^5.5.2",

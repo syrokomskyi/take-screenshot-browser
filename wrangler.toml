@@ -1,8 +1,10 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "take-screenshot-browser"
-main = "src/index.ts"
-compatibility_date = "2024-11-27"
+main = "src/index.js"
+compatibility_date = "2023-09-04"
 compatibility_flags = ["nodejs_compat"]
+
+account_id = "4300b51226d758c9c8aff76fc9557565"
 
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
@@ -112,3 +114,24 @@ enabled = true
 # [[vectorize]]
 # binding = "MY_INDEX"
 # index_name = "my-index"
+
+[browser]
+binding = "MYBROWSER"
+
+[[kv_namespaces]]
+binding = "MY_KV_NAMESPACE"
+id = "192a2432bbdf456dae460bbae5eb86ce"
+preview_id = "c0310110c25d4988b7305359d0fbe545"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "screenshots"
+preview_bucket_name = "screenshots-test"
+
+[[durable_objects.bindings]]
+name = "BROWSER"
+class_name = "Browser"
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["Browser"] # Array of new classes
